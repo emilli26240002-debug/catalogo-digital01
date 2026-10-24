@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SERV-BEM</title>
+    <link rel="stylesheet" href="cardapio.css">
+    <link rel="manifest" href="manifest.json">
+     <meta name="theme-color" content="#c84b31">
+</head>
+
+<body>
+
+    <header>
+        <h1>milix</h1>
+        <p>Bem-vindo ao nosso restaurante!</p>
+    </header>
+
+    <div class="carrossel">
+
+        <!-- BARRA DE CATEGORIAS / ABAS -->
+        <div class="categorias-abas">
+            <a class="tab-btn" href="categoria01.html">🍕 Pizzas</a>
+            <a class="tab-btn" href="categorialanches.html">🍔 Lanches</a>
+            <a class="tab-btn" href="pagina2.html">🥤 Bebidas</a>
+        </div>
+
+        <main class="wrap">
+
+            <!-- SEÇÃO DE PIZZAS -->
+            <h2 id="pizzas">Pizzas 🍕</h2>
+
+            <div class="carrossel-wrap">
+                <button type="button" class="seta seta-esq" onclick="rolarCarrossel('lista-pizzas', -1)" aria-label="Anterior">‹</button>
+
+                <div class="pizzas" id="lista-pizzas">
+
+                    <!-- PIZZA 1: À MODA DA CASA -->
+                    <div class="pizza">
+                        <img src="a moda da casa.jpg" alt="Pizza à moda da casa">
+                        <h3>🍕 À MODA DA CASA</h3>
+                        <p>Mussarela, presunto, calabresa e tomate.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('À MODA DA CASA','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('À MODA DA CASA','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('À MODA DA CASA','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('À MODA DA CASA','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('À MODA DA CASA','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 2: CAMARÃO -->
+                    <div class="pizza">
+                        <img src="cmarao.jpeg" alt="Pizza de camarão">
+                        <h3>🍕 CAMARÃO</h3>
+                        <p>Mussarela, camarão e ovo.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','P',30)">P — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','M',35)">M — R$ 35,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','G',45)">G — R$ 45,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','F',60)">F — R$ 60,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','GG',70)">GG — R$ 70,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 3: CALABRESA -->
+                    <div class="pizza">
+                        <img src="calabresa002.jpeg" alt="Pizza de calabresa">
+                        <h3>🍕 CALABRESA</h3>
+                        <p>Mussarela, calabresa e tomate.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('CALABRESA','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CALABRESA','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CALABRESA','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CALABRESA','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CALABRESA','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 4: CAMARÃO -->
+                    <div class="pizza">
+                        <img src="cmarao.jpeg" alt="Pizza de camarão">
+                        <h3>🍕 CAMARÃO</h3>
+                        <p>Mussarela, camarão e ovo.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','P',30)">P — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','M',35)">M — R$ 35,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','G',45)">G — R$ 45,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','F',60)">F — R$ 60,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','GG',70)">GG — R$ 70,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 5: PORTUGUESA -->
+                    <div class="pizza">
+                        <img src="pportuguesa.jpeg" alt="Pizza portuguesa">
+                        <h3>🍕 PORTUGUESA</h3>
+                        <p>Mussarela, presunto, ovos, cebola e tomate.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('PORTUGUESA','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PORTUGUESA','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PORTUGUESA','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PORTUGUESA','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PORTUGUESA','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 6: CAMARÃO -->
+                    <div class="pizza">
+                        <img src="cmarao.jpeg" alt="Pizza de camarão">
+                        <h3>🍕 CAMARÃO</h3>
+                        <p>Mussarela, camarão e ovo.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','P',30)">P — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','M',35)">M — R$ 35,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','G',45)">G — R$ 45,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','F',60)">F — R$ 60,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','GG',70)">GG — R$ 70,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 7: FRANGO COM CATUPIRY -->
+                    <div class="pizza">
+                        <img src="frango catupiry.jpeg" alt="Pizza de frango com catupiry">
+                        <h3>🍕 FRANGO COM CATUPIRY</h3>
+                        <p>Mussarela, frango e tomate.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('FRANGO COM CATUPIRY','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('FRANGO COM CATUPIRY','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('FRANGO COM CATUPIRY','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('FRANGO COM CATUPIRY','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('FRANGO COM CATUPIRY','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 8: NORDESTINA -->
+                    <div class="pizza">
+                        <img src="NORDESTINA.jpeg" alt="Pizza nordestina">
+                        <h3>🍕 NORDESTINA</h3>
+                        <p>Mussarela, carne de sol, tomate, cebola e azeitona.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('NORDESTINA','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('NORDESTINA','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('NORDESTINA','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('NORDESTINA','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('NORDESTINA','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 9: CAMARÃO -->
+                    <div class="pizza">
+                        <img src="cmarao.jpeg" alt="Pizza de camarão">
+                        <h3>🍕 CAMARÃO</h3>
+                        <p>Mussarela, camarão e ovo.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','P',30)">P — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','M',35)">M — R$ 35,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','G',45)">G — R$ 45,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','F',60)">F — R$ 60,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('CAMARÃO','GG',70)">GG — R$ 70,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 10: MARGUERITA -->
+                    <div class="pizza">
+                        <img src="margarita.jpeg" alt="Pizza marguerita">
+                        <h3>🍕 MARGUERITA</h3>
+                        <p>Mussarela, tomate e manjericão.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('MARGUERITA','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('MARGUERITA','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('MARGUERITA','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('MARGUERITA','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('MARGUERITA','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 11: BACON -->
+                    <div class="pizza">
+                        <img src="bacon.jpeg" alt="Pizza de bacon">
+                        <h3>🍕 BACON</h3>
+                        <p>Mussarela, bacon, tomate, cebola e azeitona.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('BACON','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('BACON','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('BACON','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('BACON','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('BACON','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 12: PICANTE -->
+                    <div class="pizza">
+                        <img src="pimentta.jpeg" alt="Pizza picante">
+                        <h3>🍕 PICANTE</h3>
+                        <p>Mussarela, presunto, calabresa e pimenta calabresa.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('PICANTE','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PICANTE','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PICANTE','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PICANTE','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('PICANTE','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIZZA 13: 4 QUEIJOS -->
+                    <div class="pizza">
+                        <img src="4 queijps.jpeg" alt="Pizza de quatro queijos">
+                        <h3>🍕 4 QUEIJOS</h3>
+                        <p>Mussarela, parmesão, ricota, requeijão, tomate e orégano.</p>
+
+                        <div class="precos">
+                            <p><strong>Escolha o tamanho:</strong></p>
+                            <div class="botoes-preco">
+                                <button type="button" onclick="adicionarAoCarrinho('4 QUEIJOS','P',25)">P — R$ 25,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('4 QUEIJOS','M',30)">M — R$ 30,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('4 QUEIJOS','G',40)">G — R$ 40,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('4 QUEIJOS','F',50)">F — R$ 50,00</button>
+                                <button type="button" onclick="adicionarAoCarrinho('4 QUEIJOS','GG',60)">GG — R$ 60,00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- fecha .pizzas -->
+
+                <button type="button" class="seta seta-dir" onclick="rolarCarrossel('lista-pizzas', 1)" aria-label="Próximo">›</button>
+            </div> <!-- fecha .carrossel-wrap das pizzas -->
+
+
+            <!-- SEÇÃO DE LANCHES -->
+            <h2 id="lanches">LANCHES 🍔</h2>
+
+            <div class="carrossel-wrap">
+                <button type="button" class="seta seta-esq" onclick="rolarCarrossel('lista-lanches', -1)" aria-label="Anterior">‹</button>
+
+                <div class="lanches" id="lista-lanches">
+
+                    <!-- LANCHE 1 -->
+                    <div class="lanche">
+                        <img src="hamberguerii.jpeg" alt="Lanche">
+                        <h3>HAMBÚRGUER A MODA</h3>
+                        <p>Pão, carne, ovo, tomate e batata palha</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('HAMBÚRGUER A MODA', 'P', 12)">
+                                R$ 12,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LANCHE 2 -->
+                    <div class="lanche">
+                        <img src="hamnburguer.jpeg" alt="Lanche 2">
+                        <h3>HAMBURGUER A MODA DA CASA</h3>
+                        <p>pão, carne , queijo, ovo, presunto,tomate, pepino, milho e ervilha.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('LANCHE 2', 'P', 25)">
+                                 R$ 10,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LANCHE 3 -->
+                    <div class="lanche">
+                        <img src="x-salada.jpeg" alt="Lanche 3">
+                        <h3> X-SALADA</h3>
+                        <p>Pão, carne, queijo, alface, ovo, presunto, tomate, pepino, milho e ervilha.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('LANCHE 3', 'P', 25)">
+                                R$ 14,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lanche">
+                        <img src="x- bacon.jpeg" alt="Lanche 5">
+                        <h3> X-BACON</h3>
+                        <p>Pão, carne, queijo, bacon, ovo, milho, ervilha e batata palha</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('LANCHE 5', 'P', 25)">
+                                 R$ 15,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lanche">
+                        <img src="a moda da casa.jpg" alt="Lanche 5">
+                        <h3>LANCHE 5</h3>
+                        <p>Descrição do quinto lanche.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('LANCHE 5', 'P', 25)">
+                                P — R$ 25,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LANCHE 4 -->
+                    <div class="lanche">
+                        <img src="x-calabresa.jpeg" alt="Lanche 4">
+                        <h3>X-CALABRESA</h3>
+                        <p>Pão, carne, calabresa, queijo, ovo, milho, ervilha e batata palha.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('LANCHE 4', 'P', 25)">
+                                 R$  15,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LANCHE 5 -->
+                    <div class="lanche">
+                        <img src="a moda da casa.jpg" alt="Lanche 5">
+                        <h3>LANCHE 5</h3>
+                        <p>Descrição do quinto lanche.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('LANCHE 5', 'P', 25)">
+                                P — R$ 25,00
+                            </button>
+                        </div>
+                    </div>
+
+                </div> <!-- fecha .lanches -->
+
+                <button type="button" class="seta seta-dir" onclick="rolarCarrossel('lista-lanches', 1)" aria-label="Próximo">›</button>
+            </div> <!-- fecha .carrossel-wrap dos lanches -->
+
+
+            <!-- SEÇÃO DE BEBIDAS -->
+            <h2 id="bebidas">BEBIDAS 🥤</h2>
+            <h2>(Preços sob consulta / não especificados no menu)  </h2>
+
+            <div class="carrossel-wrap">
+                <button type="button" class="seta seta-esq" onclick="rolarCarrossel('lista-bebidas', -1)" aria-label="Anterior">‹</button>
+
+                <div class="bebidas" id="lista-bebidas">
+
+                    <!-- ITEM 1 -->
+                    <div class="bebida">
+                        <img src="maracuja.jpeg" alt="maracuja">
+                        <h3>SUCO DE MARACUJA</h3>
+                        <p>imagem ilustrativa</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('HAMBÚRGUER A MODA', 'P', 12)">
+                               adicionar 
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="bebida">
+                        <img src="bacuri002.jpeg" alt="Bacuri">
+                        <h3>SUCO DE BACURI</h3>
+                        <p>com leite ou sem leite </p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('HAMBURGUER A MODA DA CASA', 'P', 10)">
+                               adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="bebida">
+                        <img src="cupuaçu.jpeg" alt="Cupuaçu">
+                        <h3>SUCO DE CUPUAÇU</h3>
+                        <p>Com ou Sem leite.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('X-SALADA', 'P', 14)">
+                                adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 4 -->
+                    <div class="bebida">
+                        <img src="caja.jpeg" alt="caja">
+                        <h3>SUCO DE CAJÁ</h3>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('X-BACON', 'P', 15)">
+                               adicionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 5 -->
+                    <div class="bebida">
+                        <img src="x-calabresa.jpeg" alt="X-Calabresa">
+                        <h3>X-CALABRESA</h3>
+                        <p>Pão, carne, calabresa, queijo, ovo, milho, ervilha e batata palha.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('X-CALABRESA', 'P', 15)">
+                                R$ 15,00
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 6 (provisório) -->
+                    <div class="bebida">
+                        <img src="a moda da casa.jpg" alt="Item 6">
+                        <h3>ITEM 6</h3>
+                        <p>Descrição do sexto item.</p>
+                        <div class="botoes-preco">
+                            <button type="button" onclick="adicionarAoCarrinho('ITEM 6', 'P', 25)">
+                                P — R$ 25,00
+                            </button>
+                        </div>
+                    </div>
+
+                </div> <!-- fecha .bebidas -->
+
+                <button type="button" class="seta seta-dir" onclick="rolarCarrossel('lista-bebidas', 1)" aria-label="Próximo">›</button>
+            </div> <!-- fecha .carrossel-wrap das bebidas -->
+
+
+            <!-- CARRINHO DE COMPRAS -->
+            <section id="meu-carrinho">
+                <h2>🛒 Meu carrinho</h2>
+                <ul id="itens-carrinho">
+                    <li>Seu carrinho está vazio.</li>
+                </ul>
+                <h3>Total: R$ <span id="total">0,00</span></h3>
+
+                <button type="button" id="btn-continuar" onclick="irParaPagamento()">Continuar para o pagamento</button>
+                <p id="msg-carrinho"></p>
+            </section>
+
+            <!-- FINALIZAR PEDIDO: DADOS, ENDEREÇO E PAGAMENTO -->
+            <section id="finalizar" style="display:none;">
+                <h2>📦 Finalizar pedido</h2>
+
+                <div id="pagamento">
+                    <h3>Seus dados</h3>
+                    <input type="text" id="cli-nome" placeholder="Nome completo" autocomplete="name">
+                    <input type="tel" id="cli-celular" placeholder="Celular com DDD (ex: 99 91234-5678)" autocomplete="tel">
+                    <input type="email" id="cli-email" placeholder="E-mail" autocomplete="email">
+
+                    <h3>Endereço de entrega</h3>
+                    <input type="text" id="cli-rua" placeholder="Rua / Avenida">
+                    <div class="linha-campos">
+                        <input type="text" id="cli-numero" placeholder="Número">
+                        <input type="text" id="cli-bairro" placeholder="Bairro">
+                    </div>
+                    <input type="text" id="cli-complemento" placeholder="Complemento / ponto de referência (opcional)">
+
+                    <h3>Forma de pagamento</h3>
+                    <label><input type="radio" name="pagamento" value="Pix"> Pix</label>
+                    <label><input type="radio" name="pagamento" value="Cartão de crédito"> Cartão de crédito</label>
+                    <label><input type="radio" name="pagamento" value="Cartão de débito"> Cartão de débito</label>
+                    <label><input type="radio" name="pagamento" value="Dinheiro"> Dinheiro</label>
+
+                    <div id="troco-box" style="display:none;">
+                        <label>Troco para quanto? R$
+                            <input type="number" id="troco" min="0" step="0.01">
+                        </label>
+                    </div>
+
+                    <button type="button" id="btn-finalizar" onclick="finalizarPedido()">Finalizar pedido</button>
+                    <p id="msg-pedido"></p>
+                </div>
+            </section>
+
+        </main>
+
+    </div> <!-- fecha .carrossel -->
+
+    <!-- TELA DE COMPRA FINALIZADA -->
+    <div id="compra-finalizada" style="display:none;">
+        <div class="caixa-final">
+            <div class="icone-final">✅</div>
+            <h2>Compra finalizada!</h2>
+            <p id="texto-final"></p>
+            <button type="button" onclick="voltarAoInicio()">Voltar ao início</button>
+            <small>Você será redirecionado em <span id="contagem">10</span>s...</small>
+        </div>
+    </div>
+
+    <script src="cardapio.js"></script>
+
+</body>
+
+</html>

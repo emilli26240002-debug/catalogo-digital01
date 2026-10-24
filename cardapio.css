@@ -1,0 +1,430 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+body {
+    padding: 15px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+main h2 {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+/* =========================================================
+   ABAS DE CATEGORIAS
+   ========================================================= */
+.categorias-abas {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tab-btn {
+    background-color: #f0f2f5;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #d85a0b;
+    color: #000;
+}
+
+a.tab-btn {
+    text-decoration: none;
+    color: #660202;
+    display: inline-block;
+}
+
+/* =========================================================
+   CARROSSEL (pizzas, lanches e bebidas)
+   ========================================================= */
+.pizzas,
+.lanches,
+.bebidas {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.9px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.9px 5px 10px;
+    margin-bottom: 30px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;                       /* esconde a barra no Firefox */
+    box-shadow: 0 2px 8px rgba(207, 22, 22, 0.12);
+}
+
+.pizzas::-webkit-scrollbar,
+.lanches::-webkit-scrollbar,
+.bebidas::-webkit-scrollbar {
+    display: none;                               /* esconde a barra no Chrome/Safari */
+}
+
+/* =========================================================
+   SETAS
+   ========================================================= */
+.carrossel-wrap {
+    position: relative;
+    padding: 0 50px;
+}
+
+.carrossel-wrap .seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #e8d633;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carrossel-wrap .seta:hover {
+    background-color: #d2c020;
+}
+
+.seta-esq { left: 0; }
+.seta-dir { right: 0; }
+
+/* =========================================================
+   CARDS (pizza, lanche, bebida)
+   ========================================================= */
+.pizza,
+.lanche,
+.bebida {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 2px solid #e8d633;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pizza:hover,
+.lanche:hover,
+.bebida:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.pizza img,
+.lanche img,
+.bebida img {
+    width: 90%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.9px;
+    align-self: center;
+}
+
+/* título: reserva 2 linhas para todos ficarem iguais */
+.pizza h3,
+.lanche h3,
+.bebida h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.6em;
+    margin: 12px 0 6px;
+    font-size: 16px;
+}
+
+/* descrição ocupa o espaço que sobra e empurra os preços para baixo */
+.pizza p,
+.lanche p,
+.bebida p {
+    flex: 1;
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================================================
+   PREÇOS E BOTÕES
+   ========================================================= */
+.precos {
+    margin-top: auto;
+    border: 1px solid #e05328;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.precos p {
+    flex: none;
+    margin: 0 0 5px;
+    color: inherit;
+}
+
+.botoes-preco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.lanche .botoes-preco,
+.bebida .botoes-preco {
+    margin-top: auto;
+}
+
+.botoes-preco button {
+    padding: 9px 4px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e8d633;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.botoes-preco button:hover {
+    background-color: #d2c020;
+}
+
+/* botão sozinho na última linha ocupa a largura toda */
+.botoes-preco button:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+/* =========================================================
+   CARRINHO
+   ========================================================= */
+#meu-carrinho {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 15px;
+    border: 2px solid #e8d633;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+#itens-carrinho li {
+    margin-bottom: 10px;
+}
+
+#btn-continuar,
+#btn-finalizar {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e8d633;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btn-continuar:hover,
+#btn-finalizar:hover {
+    background-color: #d2c020;
+}
+
+#msg-carrinho {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+/* =========================================================
+   FINALIZAR PEDIDO (dados, endereço e pagamento)
+   ========================================================= */
+#finalizar {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 15px;
+    border: 2px solid #e8d633;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+#pagamento label {
+    display: block;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+#pagamento input[type="text"],
+#pagamento input[type="tel"],
+#pagamento input[type="email"],
+#pagamento input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#pagamento input:focus {
+    outline: none;
+    border-color: #e8d633;
+    box-shadow: 0 0 0 2px rgba(232, 214, 51, 0.4);
+}
+
+.linha-campos {
+    display: flex;
+    gap: 8px;
+}
+
+.linha-campos input {
+    flex: 1;
+    min-width: 0;
+}
+
+#troco-box {
+    margin: 8px 0;
+}
+
+#msg-pedido {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#msg-pedido.erro {
+    color: #c0392b;
+}
+
+#msg-pedido.ok {
+    color: #1e8e3e;
+    background: #e6f4ea;
+    border: 1px solid #1e8e3e;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* =========================================================
+   TELA DE COMPRA FINALIZADA
+   ========================================================= */
+#compra-finalizada {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.caixa-final {
+    width: 100%;
+    max-width: 420px;
+    padding: 25px;
+    border: 3px solid #e8d633;
+    border-radius: 14px;
+    background: #fff;
+    text-align: center;
+}
+
+.icone-final {
+    font-size: 48px;
+}
+
+.caixa-final button {
+    margin: 15px 0 8px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e8d633;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.caixa-final button:hover {
+    background-color: #d2c020;
+}
+
+.caixa-final small {
+    display: block;
+    color: #666;
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .categorias-abas {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tab-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .carrossel-wrap {
+        padding: 0 32px;
+    }
+
+    /* um card por vez */
+    .pizza,
+    .lanche,
+    .bebida {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .carrossel-wrap .seta {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    #meu-carrinho,
+    #finalizar {
+        margin: 20px 0;
+    }
+
+    .linha-campos {
+        flex-direction: column;
+    }
+
+    /* 16px evita o zoom automático do iPhone ao tocar no campo */
+    #pagamento input[type="text"],
+    #pagamento input[type="tel"],
+    #pagamento input[type="email"],
+    #pagamento input[type="number"] {
+        font-size: 16px;
+    }
+
+    .botoes-preco button,
+    #btn-finalizar,
+    #btn-continuar {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+}

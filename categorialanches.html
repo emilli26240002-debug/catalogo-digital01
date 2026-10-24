@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERV-BEM</title>
+    <link rel="stylesheet" href="cardapio.css">
+    <style>
+        body {
+            padding: 15px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        /* Estilo para as Abas de Categorias */
+        .categorias-abas {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tab-btn {
+            background-color: #f0f2f5;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #000;
+            display: inline-block;
+        }
+
+        .tab-btn.active {
+            background-color: #e8d633;
+            color: #000;
+        }
+
+        .pizzas, .lanches {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            margin-bottom: 30px;
+        }
+
+        .pizza, .lanche {
+            border: 2px solid #e8d633;
+            border-radius: 10px;
+            padding: 10px;
+            width: 250px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .pizza img, .lanche img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .precos {
+            border: 1px solid #e05328;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .botoes-preco {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .botoes-preco button {
+            padding: 9px 4px;
+            border: none;
+            border-radius: 6px;
+            background-color: #e8d633;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .botoes-preco button:hover {
+            background-color: #d2c020;
+        }
+
+        #meu-carrinho {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 15px;
+            border: 2px solid #e8d633;
+            border-radius: 10px;
+        }
+
+        #itens-carrinho li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>milix</h1>
+        <p>Bem-vindo ao nosso restaurante!</p>
+    </header>
+
+    <!-- BARRA DE CATEGORIAS / ABAS -->
+    <div class="categorias-abas">
+        <a href="categoria01.html" class="tab-btn" onclick="mudarCategoria(event, 'pizzas')">🍕 Pizzas</a>
+        <a href="index.html" class="tab-btn active" onclick="mudarCategoria(event, 'lanches')">🍔 Lanches</a>
+        <a href="pagina2.html" class="tab-btn" onclick="mudarCategoria(event, 'bebidas')">🥤 Bebidas</a>
+    </div>
+
+    <main class="wrap">
+
+        <h2 id="lanches" style="text-align: center;">LANCHES 🍔</h2>
+
+        <div class="lanches">
+
+            <!-- LANCHE 1 -->
+            <div class="lanche">
+                <img src="hamberguerii.jpeg" alt="Lanche Hambúrguer a Moda">
+                <h3>HAMBÚRGUER A MODA</h3>
+                <p>Pão, carne, ovo, tomate e batata palha</p>
+                <div class="botoes-preco">
+                    <button type="button" onclick="adicionarAoCarrinho('HAMBÚRGUER A MODA', 'P', 12)">
+                        R$ 12,00
+                    </button>
+                </div>
+            </div>
+
+            <!-- LANCHE 2 -->
+            <div class="lanche">
+                <img src="a moda da casa.jpg" alt="Lanche 2">
+                <h3>LANCHE 2</h3>
+                <p>Descrição do segundo lanche.</p>
+                <div class="botoes-preco">
+                    <button type="button" onclick="adicionarAoCarrinho('LANCHE 2', 'P', 25)">
+                        P — R$ 25,00
+                    </button>
+                </div>
+            </div>
+
+            <!-- LANCHE 3 -->
+            <div class="lanche">
+                <img src="a moda da casa.jpg" alt="Lanche 3">
+                <h3>LANCHE 3</h3>
+                <p>Descrição do terceiro lanche.</p>
+                <div class="botoes-preco">
+                    <button type="button" onclick="adicionarAoCarrinho('LANCHE 3', 'P', 25)">
+                        P — R$ 25,00
+                    </button>
+                </div>
+            </div>
+
+            <!-- LANCHE 4 -->
+            <div class="lanche">
+                <img src="a moda da casa.jpg" alt="Lanche 4">
+                <h3>LANCHE 4</h3>
+                <p>Descrição do quarto lanche.</p>
+                <div class="botoes-preco">
+                    <button type="button" onclick="adicionarAoCarrinho('LANCHE 4', 'P', 25)">
+                        P — R$ 25,00
+                    </button>
+                </div>
+            </div>
+
+            <!-- LANCHE 5 -->
+            <div class="lanche">
+                <img src="a moda da casa.jpg" alt="Lanche 5">
+                <h3>LANCHE 5</h3>
+                <p>Descrição do quinto lanche.</p>
+                <div class="botoes-preco">
+                    <button type="button" onclick="adicionarAoCarrinho('LANCHE 5', 'P', 25)">
+                        P — R$ 25,00
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CARRINHO DE COMPRAS -->
+        <section id="meu-carrinho">
+            <h2>🛒 Meu carrinho</h2>
+            <ul id="itens-carrinho">
+                <li>Seu carrinho está vazio.</li>
+            </ul>
+            <h3>Total: R$ <span id="total">0,00</span></h3>
+        </section>
+
+    </main>
+
+    <script src="cardapio.js"></script>
+
+</body>
+
+</html>
